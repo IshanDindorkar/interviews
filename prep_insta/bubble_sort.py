@@ -1,5 +1,6 @@
 """
 Bubble sort implementation
+Time complexity = O(n2)
 """
 
 import time

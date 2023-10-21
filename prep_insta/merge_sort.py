@@ -1,5 +1,6 @@
 """
 Merge sort implementation
+Time complexity = O(n log n)
 """
 from typing import List
 

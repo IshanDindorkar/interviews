@@ -1,5 +1,6 @@
 """
 Binary search implementation
+Time complexity = O(log n)
 """
 from typing import List
 
