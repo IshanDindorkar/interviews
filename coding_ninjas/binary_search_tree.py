@@ -1,5 +1,6 @@
 """
 Binary Search Tree implementation
+Time complexity to search an element = O(log n) in case of balanced BST, worst case => skewed tree; O(n)
 """
 
 
@@ -40,6 +41,27 @@ class BinarySearchTree:
     def search(self, key):
         return self._search_recursive(self._root, key)
 
+    def find_n_smallest(self, n):
+        stack = []
+        curr = self._root
+        count = 0
+
+        while True:
+            while curr is not None:
+                stack.append(curr)
+                curr = curr.left
+
+            if len(stack) == 0:
+                return None
+
+            curr = stack.pop()
+            count += 1
+
+            if count == n:
+                return curr.key
+
+            curr = curr.right
+
     def _insert_recursive(self, root: Node, key: int):
         if root is None:
             return Node(key=key)
@@ -70,6 +92,8 @@ def main():
 
     if bst.search(55):
         print("Target found in the tree")
+
+    print(bst.find_n_smallest(n=3))
 
 
 if __name__ == "__main__":
