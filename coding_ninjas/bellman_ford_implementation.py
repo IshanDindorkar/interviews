@@ -1,5 +1,7 @@
 """
-Bellman-Ford Algorithm: Find the shortest path between vertices of Graph having negative edge weights
+Bellman-Ford Algorithm:
+Find the shortest path between vertices of Graph having negative edge weights
+Time complexity = O(V * E); V = Number of vertices, E = Number of edges
 """
 
 from interviews.custom_exceptions.negative_weight_cycle import NegativeWeightCycle

@@ -1,10 +1,16 @@
 """
-Dijkstra Implementation: Find the shortest path from given point to all other points in the Graph
+Dijkstra Implementation:
+Find the shortest path from given point to all other points in the Graph.
 It is useful only in graphs with non-negative weights. Otherwise, checkout Bellman-Ford algorithm
 
 There are 2 data structures being used
 1. Dictionary: Create "graph" and "distances"
 2. Priority Queue: Track distances from start vertex to all other vertices in the Graph
+
+Dijkstra's algorithm has a time complexity:
+1. O(V^2) for dense graphs when using an adjacency matrix
+2. O((V + E) * log(V)) when using a priority queue for sparse graphs,
+where V is the number of vertices and E is the number of edges.
 """
 
 import heapq
