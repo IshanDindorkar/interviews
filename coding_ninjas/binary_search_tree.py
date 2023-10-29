@@ -1,6 +1,7 @@
 """
 Binary Search Tree implementation
-Time complexity to search an element = O(log n) in case of balanced BST, worst case => skewed tree; O(n)
+Time complexity to search an element = O(log n) in case of balanced BST,
+worst case => skewed tree; O(n)
 """
 
 
