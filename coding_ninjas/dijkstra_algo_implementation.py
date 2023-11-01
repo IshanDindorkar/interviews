@@ -1,7 +1,8 @@
 """
 Dijkstra Implementation:
 Find the shortest path from given point to all other points in the Graph.
-It is useful only in graphs with non-negative weights. Otherwise, checkout Bellman-Ford algorithm
+It is useful only in graphs with non-negative weights.
+Otherwise, checkout Bellman-Ford algorithm
 
 There are 2 data structures being used
 1. Dictionary: Create "graph" and "distances"
