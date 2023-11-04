@@ -8,7 +8,7 @@ from interviews.udemy_examples.linked_list.single_linked_list import SingleLinke
 def merge_sorted_lists(list_1: SingleLinkedList, list_2: SingleLinkedList):
     merged_list_node = Node(value=-1)
 
-    prev = merged_list_node
+    prev = merged_list_node  # Pointer for the merged list
     current_node_l1 = list_1.head
     current_node_l2 = list_2.head
     while current_node_l1 is not None and current_node_l2 is not None:
@@ -60,7 +60,6 @@ def main():
 
     merge_list_node = merge_sorted_lists(list_1=list_1, list_2=list_2)
     print_merged_list(merged_list_node=merge_list_node)
-
 
 
 if __name__ == "__main__":

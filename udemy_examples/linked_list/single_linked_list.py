@@ -136,11 +136,21 @@ class SingleLinkedList:
             self._num_nodes -= 1
 
     def remove_by_value(self, value: int):
-        for index in range(1, self._num_nodes - 1):
-            current_node = self.get(index)
-            prev_node = self.get(index - 1)
-            if current_node is not None and current_node.value == value:
-                prev_node.next = current_node.next
+        if self._head is None:
+            raise InvalidOperation("Removing element from an empty Linked List!")
+        else:
+            self._num_nodes -= 1
+            current_node = self._head
+            # Edge case: If the value to be deleted is the first element of LL
+            if current_node.value == value:
+                self._head = current_node.next
+                current_node.next = None
+            else:
+                for index in range(1, self._num_nodes - 1):
+                    current_node = self.get(index)
+                    prev_node = self.get(index - 1)
+                    if current_node is not None and current_node.value == value:
+                        prev_node.next = current_node.next
 
     def remove_duplicates(self):
         unique_elements = set()
@@ -239,8 +249,12 @@ def main():
     print(f"After removing duplicates: {single_linked_list}")
 
     # Step 12: Removing element 15 from LL
-    single_linked_list.remove_by_value(value=15)
-    print(f"After removing element 15: {single_linked_list}")
+    # single_linked_list.remove_by_value(value=15)
+    # print(f"After removing element 15: {single_linked_list}")
+
+    # Step 12: Removing element 1 from LL
+    single_linked_list.remove_by_value(value=1)
+    print(f"After removing element 1: {single_linked_list}")
 
 
 if __name__ == "__main__":
