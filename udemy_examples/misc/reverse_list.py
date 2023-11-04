@@ -20,6 +20,7 @@ def main():
     seq = [int(item) for item in seq.split(" ")]
     print(f"The original list: \n{seq}")
     print(f"The reversed list: \n{reverse_list(seq=seq)}")
+    # print(f"The reversed list: \n{seq[::-1]}")  shortcut method
 
 
 if __name__ == "__main__":
