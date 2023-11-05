@@ -2,7 +2,7 @@
 Single Linked List implementation and associated operations
 """
 from interviews.custom_exceptions.invalid_operation import InvalidOperation
-from interviews.udemy_examples.linked_list.node import Node
+from interviews.udemy_examples.linked_list.sll_node import SLLNode
 
 
 class SingleLinkedList:
@@ -16,7 +16,7 @@ class SingleLinkedList:
         return self._head
 
     @head.setter
-    def head(self, node: Node):
+    def head(self, node: SLLNode):
         self._head = node
 
     @property
@@ -24,10 +24,10 @@ class SingleLinkedList:
         return self._tail
 
     @tail.setter
-    def tail(self, node: Node):
+    def tail(self, node: SLLNode):
         self._tail = node
 
-    def append(self, node: Node):
+    def append(self, node: SLLNode):
         # Check if the list is empty => head and tail pointers should point to None
         if self._head is None:
             self._head = node
@@ -39,7 +39,7 @@ class SingleLinkedList:
 
         self._num_nodes += 1
 
-    def prepend(self, node: Node):
+    def prepend(self, node: SLLNode):
         if self._head is None:
             self._head = node
             self._tail = node
@@ -50,7 +50,7 @@ class SingleLinkedList:
 
         self._num_nodes += 1
 
-    def insert(self, index: int, node: Node):
+    def insert(self, index: int, node: SLLNode):
         if self._head is None:
             self._head = node
             self._tail = node
@@ -181,11 +181,11 @@ class SingleLinkedList:
 
 def main():
     # Step 1: Creation of new nodes
-    node_1 = Node(value=1)
-    node_2 = Node(value=5)
-    node_3 = Node(value=15)
-    node_4 = Node(value=20)
-    node_5 = Node(value=12)
+    node_1 = SLLNode(value=1)
+    node_2 = SLLNode(value=5)
+    node_3 = SLLNode(value=15)
+    node_4 = SLLNode(value=20)
+    node_5 = SLLNode(value=12)
 
     # Step 2.1: Creating new Single Linked List
     single_linked_list = SingleLinkedList()
@@ -237,9 +237,9 @@ def main():
     single_linked_list.reverse()
 
     # Step 11: Removing duplicates from LL
-    node_6 = Node(value=15)
-    node_7 = Node(value=20)
-    node_8 = Node(value=12)
+    node_6 = SLLNode(value=15)
+    node_7 = SLLNode(value=20)
+    node_8 = SLLNode(value=12)
     single_linked_list.append(node_6)
     single_linked_list.append(node_7)
     single_linked_list.append(node_8)

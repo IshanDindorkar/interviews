@@ -1,4 +1,9 @@
-class Node:
+"""
+Definition of Node class used for creation of Single Linked List
+"""
+
+
+class SLLNode:
     def __init__(self, value: int):
         self._value = value
         self._next = None

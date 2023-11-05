@@ -1,10 +1,14 @@
+"""
+Circular Single Linked List operations
+"""
+
 from interviews.custom_exceptions.invalid_operation import InvalidOperation
-from interviews.udemy_examples.linked_list.node import Node
+from interviews.udemy_examples.linked_list.sll_node import SLLNode
 from interviews.udemy_examples.linked_list.single_linked_list import SingleLinkedList
 
 
 class CircularSingleLinkedList(SingleLinkedList):  # CSLL for short
-    def append(self, new_node: Node):
+    def append(self, new_node: SLLNode):
         if self.head is None:
             # CSLL is empty
             self.head = new_node
@@ -19,7 +23,7 @@ class CircularSingleLinkedList(SingleLinkedList):  # CSLL for short
 
         self._num_nodes += 1
 
-    def prepend(self, new_node: Node):
+    def prepend(self, new_node: SLLNode):
         if self.head is None:
             self.head = new_node
             self.tail = new_node
@@ -32,7 +36,7 @@ class CircularSingleLinkedList(SingleLinkedList):  # CSLL for short
 
         self._num_nodes += 1
 
-    def insert(self, index: int, new_node: Node):
+    def insert(self, index: int, new_node: SLLNode):
         # Edge case: when CSLL is empty
         if self.head is None:
             self.head = new_node
@@ -156,12 +160,12 @@ class CircularSingleLinkedList(SingleLinkedList):  # CSLL for short
 
 def main():
     # Step 1: Creating new nodes
-    node_1 = Node(value=1)
-    node_2 = Node(value=2)
-    node_3 = Node(value=3)
-    node_4 = Node(value=4)
-    node_5 = Node(value=5)
-    node_6 = Node(value=6)
+    node_1 = SLLNode(value=1)
+    node_2 = SLLNode(value=2)
+    node_3 = SLLNode(value=3)
+    node_4 = SLLNode(value=4)
+    node_5 = SLLNode(value=5)
+    node_6 = SLLNode(value=6)
 
     # Step 2: Building circular single linked list
     csll = CircularSingleLinkedList()
@@ -174,20 +178,20 @@ def main():
     print(f"Circular Single Linked List: \n{csll}")
 
     # Step 4: Prepending element to CSLL
-    node_0 = Node(value=0)
+    node_0 = SLLNode(value=0)
     csll.prepend(new_node=node_0)
     print(f"New CSLL after prepending: \n{csll}")
 
     # Step 5: Inserting element at different positions in the CSLL
-    node_34 = Node(value=34)
+    node_34 = SLLNode(value=34)
     csll.insert(index=4, new_node=node_34)
     print(f"CSLL after inserting at index 4: \n{csll}")
 
-    node_7 = Node(value=7)
+    node_7 = SLLNode(value=7)
     csll.insert(index=8, new_node=node_7)
     print(f"CSLL after inserting at index 8: \n{csll}")
 
-    node_neg_1 = Node(value=-1)
+    node_neg_1 = SLLNode(value=-1)
     csll.insert(index=0, new_node=node_neg_1)
     print(f"CSLL after inserting at index 0: \n{csll}")
 
@@ -228,4 +232,3 @@ if __name__ == "__main__":
     main()
 
 # EOF
-

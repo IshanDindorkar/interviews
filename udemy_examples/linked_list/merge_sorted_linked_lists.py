@@ -1,12 +1,12 @@
 """
 Merge two sorted Single Linked Lists
 """
-from interviews.udemy_examples.linked_list.node import Node
+from interviews.udemy_examples.linked_list.sll_node import SLLNode
 from interviews.udemy_examples.linked_list.single_linked_list import SingleLinkedList
 
 
 def merge_sorted_lists(list_1: SingleLinkedList, list_2: SingleLinkedList):
-    merged_list_node = Node(value=-1)
+    merged_list_node = SLLNode(value=-1)
 
     prev = merged_list_node  # Pointer for the merged list
     current_node_l1 = list_1.head
@@ -28,7 +28,7 @@ def merge_sorted_lists(list_1: SingleLinkedList, list_2: SingleLinkedList):
     return merged_list_node.next
 
 
-def print_merged_list(merged_list_node: Node):
+def print_merged_list(merged_list_node: SLLNode):
     merged_list = ""
     current_node = merged_list_node
     while current_node is not None:
@@ -39,12 +39,12 @@ def print_merged_list(merged_list_node: Node):
 
 
 def main():
-    node_1 = Node(value=1)
-    node_2 = Node(value=2)
-    node_3 = Node(value=3)
-    node_4 = Node(value=4)
-    node_5 = Node(value=5)
-    node_6 = Node(value=6)
+    node_1 = SLLNode(value=1)
+    node_2 = SLLNode(value=2)
+    node_3 = SLLNode(value=3)
+    node_4 = SLLNode(value=4)
+    node_5 = SLLNode(value=5)
+    node_6 = SLLNode(value=6)
 
     list_1 = SingleLinkedList()
     list_1.append(node_1)
