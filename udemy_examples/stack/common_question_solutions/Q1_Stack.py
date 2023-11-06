@@ -56,5 +56,7 @@ print(customStack.isEmpty(1))
 customStack.push(1, 0)
 customStack.push(2, 0)
 customStack.push(3, 2)
-print(customStack.pop(0))
+customStack.push(4, 2)
+customStack.push(5, 2)
+print(customStack.pop(2))
         

@@ -80,6 +80,9 @@ class CircularQueue:
             self.start = 0
         else:
             self.start += 1
+            if self.start == self.top:
+                self.top = -1   # queue is empty now
+                self.start = -1
         self.items[start_ptr] = None
 
         return first_element
