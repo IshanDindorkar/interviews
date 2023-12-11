@@ -1,0 +1,121 @@
+Data pre-processing
+1. check for null values
+
+1.1 replace with 0
+# importing pandas as pd
+import pandas as pd
+
+# importing numpy as np
+import numpy as np
+
+# dictionary of lists
+dict = {'First Score':[100, 90, np.nan, 95],
+        'Second Score': [30, 45, 56, np.nan],
+        'Third Score':[np.nan, 40, 80, 98]}
+
+# creating a dataframe from dictionary
+df = pd.DataFrame(dict)
+
+count_nan = df['Integers'].isnull().sum()
+
+# filling missing value using fillna()
+df.fillna(0)
+
+from sklearn.preprocessing import Imputer
+imputer = Imputer(missing_values='NaN', strategy = 'mean', axis = 0)
+imputer = imputer.fit(X[:,1:3])
+X[:, 1:3] = imputer.transform(X[:,1:3])
+
+1.2 dataset.dropna().shape
+
+
+2. normalization
+
+# copy the data
+df_min_max_scaled = df.copy()
+
+# apply normalization techniques
+for column in df_min_max_scaled.columns:
+    df_min_max_scaled[column] = (df_min_max_scaled[column] - df_min_max_scaled[column].min()) / (df_min_max_scaled[column].max() - df_min_max_scaled[column].min())
+
+# view normalized data
+print(df_min_max_scaled)
+
+3. categorical column
+df[col] = df[col].astype("category")
+
+# turn X into dict
+X_dict = X.to_dict(orient='records') # turn each row as key-value pairs
+# show X_dict
+X_dict
+
+# DictVectorizer
+from sklearn.feature_extraction import DictVectorizer
+# instantiate a Dictvectorizer object for X
+dv_X = DictVectorizer(sparse=False)
+# sparse = False makes the output is not a sparse matrix
+
+# apply dv_X on X_dict
+X_encoded = dv_X.fit_transform(X_dict)
+
+
+
+
+
+
+Treating outliers => this will remove all rows where Z-score is greater than 3
+df = pd.DataFrame(np.random.randn(100, 3))
+df[(np.abs(stats.zscore(df)) < 3).all(axis=1)]
+
+
+
+
+
+
+4. Split dataset into train and test
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.25, random_state=42)
+
+
+5. Applying regeression to the given datatset
+from sklearn.linear_model import LinearRegression
+regressor=LinearRegression()
+regressor.fit(X_train,y_train)
+
+6. Prediction using trained regressor
+y_pred = regressor.predict(X_test)
+
+7. Calculate performance metrics
+from sklearn.metrics import accuracy_score
+
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.metrics import f1_score
+
+accuracy = accuracy_score(testy, yhat_classes)
+print('Accuracy: %f' % accuracy)
+# precision tp / (tp + fp)
+precision = precision_score(testy, yhat_classes)
+print('Precision: %f' % precision)
+# recall: tp / (tp + fn)
+recall = recall_score(testy, yhat_classes)
+print('Recall: %f' % recall)
+# f1: 2 tp / (2 tp + fp + fn)
+f1 = f1_score(testy, yhat_classes)
+print('F1 score: %f' % f1)
+
+
+
+8. Visualization
+#visualisation for the test values
+plt.scatter(X_test,y_test,color="red")
+plt.plot(X_train,regressor.predict(X_train),color="blue")
+plt.title('Linear Regression(Test Set)')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.show()
+

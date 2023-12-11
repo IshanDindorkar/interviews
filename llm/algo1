@@ -1,0 +1,7 @@
+1. Loading: First we need to load our data. Use the LangChain integration hub to
+browse the full set of loaders.
+2. Splitting: Text splitters break Documents into splits of specified size
+3. Storage: Storage (e.g., often a vectorstore) will house and often embed the splits
+4. Retrieval: The app retrieves splits from storage (e.g., often with similar
+embeddings to the input question)
+5. Generation: An LLM produces an answer using a prompt that includes the question and the retrieved data
