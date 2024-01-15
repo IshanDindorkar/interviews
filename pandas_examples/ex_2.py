@@ -13,18 +13,22 @@ def main():
 
     print("################")
 
+    print("df.iloc[0]")
     print(df.iloc[0])
 
     print("################")
 
+    print("df.iloc[:2, :2]")
     print(df.iloc[:2, :2])
 
     print("################")
 
+    print("df.iloc[-2:]")
     print(df.iloc[-2:])
 
     print("################")
 
+    print("df.iloc[-2:, 1]")
     print(df.iloc[-2:, 1])
 
 

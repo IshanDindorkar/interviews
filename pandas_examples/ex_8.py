@@ -19,18 +19,27 @@ def main():
     print(df.to_string())
     print("##################")
 
-    table = pd.pivot_table(df, values='D', index=['A', 'B'],
-                           columns=['C'], aggfunc="sum")
+    table = pd.pivot_table(df,
+                           values='D',
+                           index=['A', 'B'],
+                           columns=['C'],
+                           aggfunc="sum")
     print(table)
     print("##################")
 
-    table = pd.pivot_table(df, values='D', index=['A', 'B'],
-                           columns=['C'], aggfunc="sum", fill_value=0)
+    table = pd.pivot_table(df,
+                           values='D',
+                           index=['A', 'B'],
+                           columns=['C'],
+                           aggfunc="sum",
+                           fill_value=0)
     print(table)
     print("##################")
 
-    table = pd.pivot_table(df, values=['D', 'E'], index=['A', 'C'],
-                           aggfunc={'D': "mean", 'E': "mean"})
+    table = pd.pivot_table(df,
+                           values=['D', 'E'],
+                           index=['A', 'C'],
+                           aggfunc={'D': "mean", 'E': "sum"})
     print(table)
     print("##################")
 

@@ -18,14 +18,17 @@ def main():
     print("##################")
 
     df3 = df1.merge(df2, how="inner", on="a")
+    print("df3 = df1.merge(df2, how='inner', on='a')")
     print(df3)
     print("##################")
 
     df4 = df1.merge(df2, how="left", on="a")
+    print("df4 = df1.merge(df2, how='left', on='a')")
     print(df4)
     print("##################")
 
     df5 = df1.merge(df2, how="right", on="a")
+    print("df5 = df1.merge(df2, how='right', on='a')")
     print(df5)
     print("##################")
 

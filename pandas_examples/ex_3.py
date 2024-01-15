@@ -15,11 +15,13 @@ def main():
 
     print("###############")
 
+    print("df.sort_values(by=['col1'], inplace=True)")
     df.sort_values(by=["col1"], inplace=True)
     print(df)
 
     print("###############")
 
+    print("df.sort_values(by=['col1'], inplace=True, ascending=False)")
     df.sort_values(by=["col1"], inplace=True, ascending=False)
     print(df)
 

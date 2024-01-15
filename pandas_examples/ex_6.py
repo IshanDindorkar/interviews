@@ -9,7 +9,9 @@ def main():
     print(df.to_string())
     print("##################")
 
-    df_grouped = df.groupby("a")["b"].apply(list).reset_index(name="new")
+    df_grouped = (df.groupby("a")["b"]
+                  .apply(list)
+                  .reset_index(name="new"))
     print(df_grouped)
 
 
