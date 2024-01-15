@@ -1,0 +1,10 @@
+# config.yaml
+database:
+  host: localhost
+  port: 5432
+  username: myuser
+  password: mypassword
+
+app:
+  debug: true
+  log_file: app.log

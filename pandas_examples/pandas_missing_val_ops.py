@@ -8,7 +8,14 @@ data = {
     'C': [1, 2, 3, 4, 5]
 }
 
-df = pd.DataFrame(data)
+df = pd.DataFrame(data, index=["V", "W", "X", "Y", "Z"])
+df_modified = df.drop(axis="columns", columns=["C"])
+print("Dataframe with C column dropped")
+print(df_modified.to_string())
+
+df_modified = df.drop(axis="index", index=["Y"])
+print("Dataframe with Y index dropped")
+print(df_modified.to_string())
 
 # Check for missing values using isnull and notnull
 print("DataFrame with missing values:")
@@ -20,7 +27,7 @@ print(df.notnull())
 
 # Drop rows or columns with missing values using dropna
 df_dropna_rows = df.dropna()  # Drop rows with any missing values
-df_dropna_cols = df.dropna(axis=1)  # Drop columns with any missing values
+df_dropna_cols = df.dropna(axis="columns")  # Drop columns with any missing values
 
 print("\nDataFrame after dropping rows with missing values:")
 print(df_dropna_rows)

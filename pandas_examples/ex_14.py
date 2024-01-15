@@ -2,7 +2,8 @@ import pandas as pd
 
 # Creating a DataFrame
 data = {'A': [1, 2, 3], 'B': [4, 5, 6]}
-df = pd.DataFrame(data, index=['row1', 'row2', 'row3'])
+df = pd.DataFrame(data,
+                  index=['row1', 'row2', 'row3'])
 print(df.to_string())
 print("###############")
 
