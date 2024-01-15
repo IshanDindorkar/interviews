@@ -23,7 +23,9 @@ y = iris.target  # Target labels
 #                            random_state=42)
 
 # Split the dataset into a training set and a testing set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.3,
+                                                    random_state=42)
 
 # Create a Decision Tree classifier
 dt_classifier = DecisionTreeClassifier(random_state=42)

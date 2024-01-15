@@ -17,7 +17,9 @@ X = iris.data[:, :2]  # We'll use only the first two features for visualization
 y = iris.target
 
 # Split the dataset into a training set and a testing set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+                                                    test_size=0.3,
+                                                    random_state=42)
 
 # Create an SVM classifier
 svm_classifier = SVC(kernel='linear', C=1.0)

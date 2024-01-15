@@ -1,7 +1,7 @@
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 
 # Create a toy dataset of text documents and corresponding labels
 documents = ["I love this product",
@@ -16,7 +16,9 @@ X = vectorizer.fit_transform(documents)
 print(X.toarray())
 
 # Split the data into a training set and a testing set
-X_train, X_test, y_train, y_test = train_test_split(X, labels, test_size=0.25, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, labels,
+                                                    test_size=0.5,
+                                                    random_state=42)
 
 # Create and train the Multinomial Naive Bayes classifier
 nb_classifier = MultinomialNB()
@@ -24,7 +26,12 @@ nb_classifier.fit(X_train, y_train)
 
 # Make predictions on the test set
 y_pred = nb_classifier.predict(X_test)
+print(y_pred)
 
 # Calculate the accuracy of the classifier
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
+
+class_report = classification_report(y_test, y_pred)
+print("Classification report")
+print(class_report)
