@@ -15,7 +15,8 @@ print(my_array)
 # swapping the column with index of
 # original array
 my_array[:, [2, 0]] = my_array[:, [0, 2]]
-print("After swapping arrays the last column and first column:")
+print("After swapping arrays the last column "
+      "and first column:")
 print(my_array)
 
 # EOF

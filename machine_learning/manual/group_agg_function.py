@@ -10,10 +10,12 @@ data = {
 df = pd.DataFrame(data)
 
 # Group by 'Category' and calculate the sum of 'Value'
-grouped_df = df.groupby('Category')['Value'].sum().reset_index()
+grouped_df = (df.groupby('Category')['Value'].sum()
+              .reset_index())
 
-# # Sort the DataFrame by the sum of values in descending order
-sorted_df = grouped_df.sort_values(by='Value', ascending=False)
+# Sort the DataFrame by the sum of values in descending order
+sorted_df = grouped_df.sort_values(by='Value',
+                                   ascending=False)
 #
 # Display the result
 print("Original DataFrame:")

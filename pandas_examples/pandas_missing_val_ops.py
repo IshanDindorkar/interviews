@@ -9,6 +9,9 @@ data = {
 }
 
 df = pd.DataFrame(data, index=["V", "W", "X", "Y", "Z"])
+print("Original dataframe")
+print(df.to_string())
+
 df_modified = df.drop(axis="columns", columns=["C"])
 print("Dataframe with C column dropped")
 print(df_modified.to_string())

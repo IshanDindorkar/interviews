@@ -6,7 +6,8 @@ multi_index = pd.MultiIndex.from_tuples(index_tuples,
                                         names=['Letter', 'Number'])
 
 # Creating a DataFrame with a MultiIndex
-data = {'Value': [10, 20, 30, 40]}
+data = {'Value 1': [10, 20, 30, 40],
+        'Value 2': [50, 60, 70, 80]}
 df = pd.DataFrame(data, index=multi_index)
 
 print("DataFrame with MultiIndex:")
@@ -26,11 +27,15 @@ print("\nStacked DataFrame:")
 print(stacked_df)
 
 """
-Letter  Number       
-A       1       Value    10
-        2       Value    20
-B       1       Value    30
-        2       Value    40
+Letter  Number         
+A       1       Value 1    10
+                Value 2    50
+        2       Value 1    20
+                Value 2    60
+B       1       Value 1    30
+                Value 2    70
+        2       Value 1    40
+                Value 2    80
 """
 
 # Unstack: Convert the DataFrame back to the original wide format
@@ -39,10 +44,10 @@ print("\nUnstacked DataFrame:")
 print(unstacked_df)
 
 """
-               Value
-Letter Number       
-A      1          10
-       2          20
-B      1          30
-       2          40
+               Value 1  Value 2
+Letter Number                  
+A      1            10       50
+       2            20       60
+B      1            30       70
+       2            40       80
 """

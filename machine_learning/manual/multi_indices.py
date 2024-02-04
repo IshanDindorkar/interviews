@@ -1,6 +1,8 @@
 import pandas as pd
 
-student_dict = {'Name': ['Kate', 'Harry', 'Sheila'], 'Age': [10, 11, 12], 'Marks': [85, 77, 91]}
+student_dict = {'Name': ['Kate', 'Harry', 'Sheila'],
+                'Age': [10, 11, 12],
+                'Marks': [85, 77, 91]}
 
 # create DataFrame from dict
 student_df = pd.DataFrame(student_dict)

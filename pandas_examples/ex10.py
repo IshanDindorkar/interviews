@@ -7,10 +7,12 @@ print(df1.to_string())
 print(df2.to_string())
 
 # Using concat to concatenate DataFrames along rows (axis=0)
-concatenated_df_rows = pd.concat([df1, df2], ignore_index=True)
+concatenated_df_rows = pd.concat([df1, df2],
+                                 ignore_index=True)
 
 # Using concat to concatenate DataFrames along columns (axis=1)
-concatenated_df_columns = pd.concat([df1, df2], axis=1)
+concatenated_df_columns = pd.concat([df1, df2],
+                                    axis=1)
 
 print("Concatenated DataFrame along rows:")
 print(concatenated_df_rows)
