@@ -36,7 +36,7 @@ class OnlineBankingPayment(AbsPayment):
 
 class WalletPayment(AbsPayment):
     def pay(self, amount: int):
-        response = "Payment for amount INR {amount} done using wallet"
+        response = f"Payment for amount INR {amount} done using wallet"
         return response
 
 

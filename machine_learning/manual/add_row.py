@@ -16,18 +16,20 @@
 
 import pandas as pd
 
-student_dict = {'Name': ['Kate', 'Harry', 'Sheila'], 'Age': [10, 14, 12], 'Marks': [85, 77, 91]}
+student_dict_1 = {'Name': ['Kate', 'Harry', 'Sheila'],
+                  'Age': [10, 14, 12],
+                  'Marks': [85, 77, 91]}
 
 # create DataFrame from dict
-df = pd.DataFrame(student_dict)
-print(df)
+df1 = pd.DataFrame(student_dict_1)
+print(df1)
 
-dict = {'Name':['Amy', 'Maddy'],
-        'Age':[19, 12],
-        'Marks':[93, 81]
-       }
-df2 = pd.DataFrame(dict)
+student_dict_2 = {'Name': ['Amy', 'Maddy'],
+                  'Age': [19, 12],
+                  'Marks': [93, 81]
+                  }
+df2 = pd.DataFrame(student_dict_2)
 print(df2)
-df3 = pd.concat([df, df2], ignore_index = True)
+df3 = pd.concat([df1, df2], ignore_index=True)
 
 print(df3)

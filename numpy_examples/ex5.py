@@ -2,7 +2,6 @@
 Create random array using Numpy with and without Normal Distribution
 """
 
-
 import numpy as np
 
 
@@ -16,11 +15,13 @@ def main():
 
     # Generate numbers from random distribution
     arr = np.random.rand(2, 3)
+    print("Random numbers")
     print(arr)
     print("####################")
 
     # Generate numbers from Normal Distribution
     arr = np.random.randn(2, 3)
+    print("Standard Normal Distribution")
     print(arr)
     print("####################")
 
@@ -38,7 +39,6 @@ def main():
     ones = np.full(shape=(3, 3), fill_value=1)
     print(ones)
     print("####################")
-
 
 
 if __name__ == "__main__":

@@ -40,13 +40,13 @@ y_pred = dt_classifier.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 
-precision = precision_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, average="micro")
 print("Precision:", precision)
 
-recall = recall_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred, average="micro")
 print("Recall:", recall)
 
-f1 = f1_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred, average="micro")
 print("F1-score:", f1)
 
 # Create a confusion matrix
@@ -56,6 +56,10 @@ print(conf_matrix)
 
 # Plot the Decision Tree
 plt.figure(figsize=(12, 8))
-plot_tree(dt_classifier, filled=True, feature_names=iris.feature_names, class_names=iris.target_names, fontsize=10)
+plot_tree(dt_classifier,
+          filled=True,
+          feature_names=iris.feature_names,
+          class_names=iris.target_names,
+          fontsize=10)
 plt.title("Decision Tree")
 plt.show()

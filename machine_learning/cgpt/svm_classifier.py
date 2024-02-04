@@ -1,5 +1,5 @@
 """
-Support Vector Machines (SVM): Supervised ML algorithm that can be sed for classification
+Support Vector Machines (SVM): Supervised ML algorithm that can be used for classification
 and regression
 """
 
