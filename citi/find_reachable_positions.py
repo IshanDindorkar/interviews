@@ -1,3 +1,11 @@
+"""
+You are playing a board game (1-D array) where the player moves by rolling a die with the number of sides given and is
+allowed to roll it once. You are also given a list of teleporters that move the player from one square to another.
+The starting and ending squares are given as well.
+Return a distinct list of positions where the player can potentially jump to.
+"""
+
+
 def find_reachable_positions(start_square: int,
                              die_sides: int,
                              teleporters: dict[int, int],

@@ -1,3 +1,9 @@
+"""
+A 2-D grid that consists of '0' and '+'. '+' means impassable and '0' means passable.
+Return the rows and columns indices that are completely passable (all 0's).
+"""
+
+
 def find_passable_indices(grid):
     """
     Finds the row and column indices that are completely passable ('0's).
